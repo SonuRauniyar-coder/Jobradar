@@ -1,0 +1,14 @@
+# Local development only: file-based H2 and throwaway credentials.
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/jobradar;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password: ""
+
+jobradar:
+  seed-sample-data: ${SEED_SAMPLE_DATA:true}
+  admin:
+    email: ${ADMIN_EMAIL:admin@jobradar.local}
+    password: ${ADMIN_PASSWORD:admin12345}
+  jwt:
+    secret: ${JWT_SECRET:dev-only-secret-dev-only-secret-dev-only-secret-0123456789}
